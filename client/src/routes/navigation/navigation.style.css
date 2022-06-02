@@ -1,0 +1,53 @@
+.navbar-container {
+  width: 100%;
+  display: flex;
+}
+.navbar-image-container {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar-links {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+.navbar-links a {
+  text-decoration: none;
+  font-size: larger;
+  color: black;
+  font-weight: 500;
+  display: inline-block;
+  padding: 15px;
+}
+.navbar-links a:hover {
+  color: black;
+}
+.signin-register-link {
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar-links-container {
+  width: 50%;
+}
+.navbar-links-container1 {
+  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar-link-container2 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 120px;
+}
+.cart-count {
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bold;
+}

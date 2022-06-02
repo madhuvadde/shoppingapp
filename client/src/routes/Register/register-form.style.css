@@ -1,0 +1,20 @@
+.register-form-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.register-form-description {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  /* background-color: red; */
+}
+.register-form-description p {
+  background-color: white;
+  margin-top: 20px;
+}
+.register-form {
+  width: 55%;
+}

@@ -1,0 +1,13 @@
+.products-unavailable-message {
+  width: 100%;
+  display: inline-block;
+  /* background-color: palevioletred; */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+  color: deeppink;
+  height: 600px;
+}

@@ -1,0 +1,13 @@
+.card-container {
+  margin: 10px;
+}
+.cardBody-name {
+  height: 50px;
+}
+.cardBody-container {
+  height: 450px;
+}
+.cardBody-footer {
+  display: flex;
+  justify-content: space-between;
+}

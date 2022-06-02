@@ -1,0 +1,9 @@
+.inputField {
+  width: 376px;
+  padding: 10px 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: groove;
+  border-left: none;
+  outline: 0;
+}

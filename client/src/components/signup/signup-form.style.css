@@ -1,0 +1,20 @@
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 380px;
+  height: 550px;
+}
+.signUp-btn {
+  width: 380px;
+  padding: 10px 40px;
+  margin-top: 40px;
+  background-color: rgb(240, 42, 82);
+  color: white;
+  font-size: 18px;
+  border: none;
+}
+.signUp-btn:hover {
+  background-color: black;
+  cursor: pointer;
+}

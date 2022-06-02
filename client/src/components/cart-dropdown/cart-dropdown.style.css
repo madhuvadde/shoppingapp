@@ -1,0 +1,104 @@
+.cart-dropdown-container {
+  position: absolute;
+  width: 500px;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+  top: 110px;
+  right: 40px;
+  z-index: 5;
+}
+.cart-dropdown-container .cart-item-count {
+  background-color: black;
+  color: white;
+  height: 50px;
+  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 0;
+}
+.cart-dropdown-container .cart-item-count .cart-title {
+  font-size: large;
+  font-weight: bold;
+  padding: 5px;
+}
+.cart-dropdown-container .cart-item-count .cart-close {
+  cursor: pointer;
+  padding: 5px;
+}
+.cart-items {
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden auto;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: auto;
+}
+.card-dropdown-footer {
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 18px auto;
+}
+
+.card-dropdown-footer .promo-code-message {
+  margin: 20px 0;
+  font-weight: bold;
+}
+.card-dropdown-footer .checkout-btn {
+  background-color: crimson;
+  width: 440px;
+  padding: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+}
+.card-dropdown-footer .checkout-btn .checkout-context {
+  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+}
+.card-dropdown-footer .checkout-btn .checkout-context .checkout-proceed {
+  width: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+.card-dropdown-footer .checkout-btn:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.cart-empty-message {
+  height: 500px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-empty-message .title {
+  font-size: x-large;
+  font-weight: bold;
+}
+.cart-empty-message .description {
+  font-size: medium;
+  font-weight: 600;
+}
+.lowest-price-container {
+  margin: 0 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.lowest-price-container span {
+  padding-left: 20px;
+  font-size: large;
+  font-weight: 600;
+}
