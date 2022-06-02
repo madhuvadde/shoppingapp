@@ -5,7 +5,6 @@ import {
   createUserDocumentFromAuth,
   signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
-import { UserContext } from "../../contexts/user.context";
 import FormInput from "../forminput/form-input.component";
 import Button from "../button/button.component";
 
