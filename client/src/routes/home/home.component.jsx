@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import Carousal from "../../components/carousal/carousal-component";
 import HomeCard from "../../components/home-card/home-card.component";
+import QueryResult from "../../components/query-result/query-result.component";
 import "./homepage.style.css";
 
 const CATEGORIES = gql`
@@ -17,20 +18,18 @@ const CATEGORIES = gql`
 `;
 
 const Home = () => {
-  const { loading, error, data } = useQuery(CATEGORIES);
-
-  if (loading) return <p>loading...</p>;
-  if (error) return <p>Error :{error.message}</p>;
-  const categories = data?.categoriesForHome
-    ?.map((categoryItem) => categoryItem)
-    .sort((a, b) => (a.order > b.order ? 1 : -1));
+  const { loading, error, data: categories } = useQuery(CATEGORIES);
   return (
     <>
       <Carousal />
-      {categories &&
-        categories.map((category, idx) => (
-          <HomeCard key={category.id} category={category} idx={idx} />
-        ))}
+      <QueryResult error={error} loading={loading} data={categories}>
+        {categories?.categoriesForHome
+          ?.map((categoryItem) => categoryItem)
+          .sort((a, b) => (a.order > b.order ? 1 : -1))
+          .map((category, idx) => (
+            <HomeCard key={category.id} category={category} idx={idx} />
+          ))}
+      </QueryResult>
     </>
   );
 };

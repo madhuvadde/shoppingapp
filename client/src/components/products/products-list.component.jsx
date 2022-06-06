@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import ProductCard from "../product-card/product-card.component";
 import SideBar from "../list-group/list-group.component";
+import QueryResult from "../query-result/query-result.component";
 import "./products-list.style.css";
 
 const PRODUCTS = gql`
@@ -17,8 +18,6 @@ const PRODUCTS = gql`
 
 const Products = () => {
   const { loading, error, data: products } = useQuery(PRODUCTS);
-  if (loading) return <p>loading...</p>;
-  if (error) return <p>Error :{error.message}</p>;
 
   return (
     <div className="product-page">
@@ -26,9 +25,11 @@ const Products = () => {
         <SideBar />
       </div>
       <div className="products">
-        {products?.productsForHome?.map((product) => (
-          <ProductCard key={product.id} item={product} />
-        ))}
+        <QueryResult error={error} loading={loading} data={products}>
+          {products?.productsForHome?.map((product) => (
+            <ProductCard key={product.id} item={product} />
+          ))}
+        </QueryResult>
       </div>
     </div>
   );
