@@ -5,7 +5,7 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartLogo from "../../components/cart-logo/cart-logo.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { Navbar, Container } from "react-bootstrap";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import Footer from "../../components/footer/footer.component";
 import "./navigation.style.css";
 
@@ -14,9 +14,13 @@ const Navigation = () => {
   const { isCartOpen, cartCount } = useContext(CartContext);
   const SignInUser = () => {
     return (
-      <Link to="/signin" className="signin-register-link">
+      <NavLink
+        to="/signin"
+        className="signin-register-link"
+        style={({ isActive }) => activeLinkHandler(isActive)}
+      >
         SignIn
-      </Link>
+      </NavLink>
     );
   };
 
@@ -30,14 +34,22 @@ const Navigation = () => {
 
   const RegisterUser = () => {
     return (
-      <Link to="/register" className="signin-register-link">
+      <NavLink
+        to="/register"
+        className="signin-register-link"
+        style={({ isActive }) => activeLinkHandler(isActive)}
+      >
         Register
-      </Link>
+      </NavLink>
     );
   };
   const signOutHandler = async () => {
     await signOutUser();
   };
+  const activeLinkHandler = (isActive) => {
+    return { color: isActive ? "orange" : "" };
+  };
+
   return (
     <>
       <Navbar
@@ -53,8 +65,18 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="navbar-links">
-            <Link to="/home">Home</Link>
-            <Link to="/products">Products</Link>
+            <NavLink
+              to="/home"
+              style={({ isActive }) => activeLinkHandler(isActive)}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/products"
+              style={({ isActive }) => activeLinkHandler(isActive)}
+            >
+              Products
+            </NavLink>
           </div>
           <div className="navbar-links-container">
             <div className="navbar-links-container1">
