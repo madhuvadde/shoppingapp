@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12",
+    "dotenv": "^16.0.1",
     "express.js": "^1.0.0",
     "json-server": "^0.17.0",
     "nodemon": "^2.0.16"

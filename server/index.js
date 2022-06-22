@@ -16,9 +16,9 @@ server.use(function (req, res, next) {
   );
   next();
 });
-
+require("dotenv").config();
 server.use(router);
-
-server.listen(5000, () => {
-  console.log(`Running server on port 5000 ...`);
+const port = process.env.MY_PORT || process.env.PORT;
+server.listen(port, () => {
+  console.log(`Running server on port ${port} ...`);
 });
