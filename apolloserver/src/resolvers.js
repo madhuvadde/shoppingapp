@@ -4,10 +4,10 @@ const resolvers = {
       return dataSources.productAPI.getProductsForHome();
     },
     categoriesForHome: (_, __, { dataSources }) => {
-      return dataSources.categoryAPI.getCategoriesForHome();
+      return dataSources.productAPI.getCategoriesForHome();
     },
     bannersForHome: (_, __, { dataSources }) => {
-      return dataSources.bannerAPI.getBannersForHome();
+      return dataSources.productAPI.getBannersForHome();
     },
   },
 };

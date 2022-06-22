@@ -10,8 +10,13 @@ const CartDropdown = () => {
     useContext(CartContext);
   const navigate = useNavigate();
   const goToCheckoutPageHandler = (e) => {
-    if (e.target.textContent === "Start Shopping") navigate("/products");
-    else navigate("/checkout");
+    if (e.target.textContent === "Start Shopping") {
+      navigate("/products");
+      setIsCartOpen(!isCartOpen);
+    } else {
+      navigate("/checkout");
+      setIsCartOpen(!isCartOpen);
+    }
   };
   const cartCloseHandler = () => {
     setIsCartOpen(!isCartOpen);
