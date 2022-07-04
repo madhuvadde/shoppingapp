@@ -6,13 +6,11 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./contexts/user.context";
 import { CartProvider } from "./contexts/cart.context";
-import { Elements } from "@stripe/react-stripe-js";
-import { stripePromise } from "./utils/stripe/stripe.utils";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000",
+  uri: "http://localhost:4000/", //"https://sabka-bazaar-apolloserver.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,9 +20,7 @@ root.render(
       <BrowserRouter>
         <UserProvider>
           <CartProvider>
-            <Elements stripe={stripePromise}>
-              <App />
-            </Elements>
+            <App />
           </CartProvider>
         </UserProvider>
       </BrowserRouter>
