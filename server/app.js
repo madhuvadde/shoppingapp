@@ -12,7 +12,7 @@ const amendHostURL = (imageURL) => {
 };
 app.use(express.static(`${__dirname}/public`));
 
-app.use("/api/v1/products", (req, res) => {
+app.get("/api/v1/products", (req, res) => {
   const allProducts = products.map((product) => ({
     ...product,
     imageURL: amendHostURL(product.imageURL),
@@ -20,7 +20,7 @@ app.use("/api/v1/products", (req, res) => {
   res.status(200).send(allProducts);
 });
 
-app.use("/api/v1/categories", (req, res) => {
+app.get("/api/v1/categories", (req, res) => {
   const allCategories = categories.map((category) => ({
     ...category,
     imageUrl: amendHostURL(category.imageUrl),
@@ -28,7 +28,7 @@ app.use("/api/v1/categories", (req, res) => {
   res.status(200).send(allCategories);
 });
 
-app.use("/api/v1/banners", (req, res) => {
+app.get("/api/v1/banners", (req, res) => {
   const allBanners = banners.map((banner) => ({
     ...banner,
     bannerImageUrl: amendHostURL(banner.bannerImageUrl),
