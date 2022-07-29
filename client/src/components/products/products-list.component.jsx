@@ -18,7 +18,6 @@ const PRODUCTS = gql`
 
 const Products = () => {
   const { loading, error, data: products } = useQuery(PRODUCTS);
-
   return (
     <div className="product-page">
       <div className="products-sidebar">

@@ -4,16 +4,13 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index"
+    "start:dev": "nodemon server.js",
+    "start:prod": "SET NODE_ENV=production nodemon server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12",
     "dotenv": "^16.0.1",
-    "express.js": "^1.0.0",
-    "json-server": "^0.17.0",
-    "nodemon": "^2.0.16"
+    "express.js": "^1.0.0"
   }
 }

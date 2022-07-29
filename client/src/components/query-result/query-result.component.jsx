@@ -2,10 +2,7 @@ import React from "react";
 import "./query-result.styles.css";
 import { Spinner } from "react-bootstrap";
 
-const QueryResult = ({ loading, error, data, children }) => {
-  if (error) {
-    return <p>ERROR: {error.message}</p>;
-  }
+const QueryResult = ({ error, loading, data, children }) => {
   if (loading) {
     return (
       <div className="SpinnerContainer">
@@ -13,11 +10,14 @@ const QueryResult = ({ loading, error, data, children }) => {
       </div>
     );
   }
-  if (!data) {
-    return <p>Nothing to show...</p>;
+  if (error) {
+    return <p>ERROR: {error.message}</p>;
   }
   if (data) {
     return children;
+  }
+  if (!data) {
+    return <p>Nothing to show...</p>;
   }
 };
 

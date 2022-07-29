@@ -18,19 +18,20 @@ const CATEGORIES = gql`
 `;
 
 const Home = () => {
-  const { loading, error, data: categories } = useQuery(CATEGORIES);
+  const { loading, error, data } = useQuery(CATEGORIES);
+
   return (
-    <>
+    <div>
       <Carousal />
-      <QueryResult error={error} loading={loading} data={categories}>
-        {categories?.categoriesForHome
+      <QueryResult error={error} loading={loading} data={data}>
+        {data?.categoriesForHome
           ?.map((categoryItem) => categoryItem)
           .sort((a, b) => (a.order > b.order ? 1 : -1))
           .map((category, idx) => (
             <HomeCard key={category.id} category={category} idx={idx} />
           ))}
       </QueryResult>
-    </>
+    </div>
   );
 };
 
