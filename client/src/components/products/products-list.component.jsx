@@ -19,12 +19,13 @@ const PRODUCTS = gql`
 const Products = () => {
   const { loading, error, data: products } = useQuery(PRODUCTS);
   return (
-    <div className="product-page">
-      <div className="products-sidebar">
+    <div className='product-page'>
+      <div className='products-sidebar'>
         <SideBar />
       </div>
-      <div className="products">
-        <QueryResult error={error} loading={loading} data={products}>
+
+      <div className='products'>
+        <QueryResult loading={loading} error={error} data={products}>
           {products?.productsForHome?.map((product) => (
             <ProductCard key={product.id} item={product} />
           ))}
@@ -33,4 +34,5 @@ const Products = () => {
     </div>
   );
 };
+
 export default Products;

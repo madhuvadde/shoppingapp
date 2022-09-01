@@ -1,15 +1,19 @@
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
-import "./cart-logo.style.css";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleCart } from "./../../store/cart";
 import Cart from "./cart.svg";
+import "./cart-logo.style.css";
 const CartLogo = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const {
+    cart: { isCartOpen },
+  } = useSelector((store) => store);
+
   const toggleIsCartOpen = () => {
-    setIsCartOpen(!isCartOpen);
+    dispatch(toggleCart(!isCartOpen));
   };
   return (
-    <div className="cart-logo" onClick={toggleIsCartOpen}>
-      <img src={Cart} alt="Cart" width="50" height="50" />
+    <div className='cart-logo' onClick={toggleIsCartOpen}>
+      <img src={Cart} alt='Cart' width='50' height='50' />
     </div>
   );
 };
