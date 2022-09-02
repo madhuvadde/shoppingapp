@@ -1,7 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
-import ProductCard from "../product-card/product-card.component";
-import SideBar from "../list-group/list-group.component";
-import QueryResult from "../query-result/query-result.component";
+import ProductCard from "../../components/product-card/product-card.component";
+import SideBar from "../../components/list-group/list-group.component";
+import QueryResult from "../../components/query-result/query-result.component";
 import "./products-list.style.css";
 
 const PRODUCTS = gql`
