@@ -2,6 +2,7 @@ import { useQuery, gql } from "@apollo/client";
 import Carousal from "../../components/carousal/carousal-component";
 import HomeCard from "../../components/home-card/home-card.component";
 import QueryResult from "../../components/query-result/query-result.component";
+import { BANNERS } from "../../services/bannerService";
 import "./homepage.style.css";
 
 const CATEGORIES = gql`
@@ -22,7 +23,7 @@ const Home = () => {
 
   return (
     <div>
-      <Carousal />
+      <Carousal query={BANNERS} />
       <QueryResult error={error} loading={loading} data={data}>
         {data?.categoriesForHome
           ?.map((categoryItem) => categoryItem)
