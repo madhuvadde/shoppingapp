@@ -1,5 +1,7 @@
+import UIButton from "react-bootstrap/Button";
+
 const Button = ({ children, ...otherProps }) => {
-  return <button {...otherProps}>{children}</button>;
+  return <UIButton {...otherProps}>{children}</UIButton>;
 };
 
 export default Button;
