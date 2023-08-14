@@ -10,7 +10,7 @@ const HomeCard = ({ category, idx }) => {
   );
   const BodyContainer = () => (
     <div className="container">
-      <div>
+      <div className="container-data">
         <h1>{name}</h1>
         <p>{description}</p>
       </div>
