@@ -3,13 +3,6 @@ import "./query-result.styles.css";
 import { Spinner } from "react-bootstrap";
 
 const QueryResult = ({ error, loading, data, children }) => {
-  if (loading) {
-    return (
-      <div className="SpinnerContainer">
-        <Spinner animation="grow" />
-      </div>
-    );
-  }
   if (error) {
     return <p>ERROR: {error.message}</p>;
   }
@@ -18,6 +11,13 @@ const QueryResult = ({ error, loading, data, children }) => {
   }
   if (!data) {
     return <p>Nothing to show...</p>;
+  }
+  if (loading) {
+    return (
+      <div className="SpinnerContainer">
+        <Spinner animation="grow" />
+      </div>
+    );
   }
 };
 
